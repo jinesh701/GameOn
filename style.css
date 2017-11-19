@@ -1,0 +1,34 @@
+.logo { 
+    text-align: center;
+    font-size: 6rem; 
+}
+
+.js-search-form {
+    text-align: center;
+}
+
+.game-name {
+    text-align: center;
+    font-size: 3rem; 
+}
+
+.platforms {
+    text-align: center; 
+    list-style: none; 
+}
+
+img {
+    margin-bottom: 20px; 
+}
+
+.live-stream-header {
+    text-align: center; 
+}
+
+.twitch-stream {
+    text-align: center; 
+}
+
+.reset-btn-container {
+    text-align: center; 
+}
