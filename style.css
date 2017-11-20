@@ -1,6 +1,6 @@
 .logo { 
     text-align: center;
-    font-size: 6rem; 
+    font-size: 5rem; 
 }
 
 .js-search-form {
@@ -21,8 +21,23 @@ img {
     margin-bottom: 20px; 
 }
 
+.game-details {
+    display: block;
+    text-align: center; 
+}
+
 .live-stream-header {
     text-align: center; 
+}
+
+.twitch-user {
+    text-align: center; 
+    font-size: 1.2rem,
+}
+
+.twitch-viewers {
+    text-align: center;
+    font-size: 1.2rem, 
 }
 
 .twitch-stream {
