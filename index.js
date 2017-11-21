@@ -3,7 +3,7 @@ const renderPlatformInfo = function (platformResult) {
     const gamePlatform = [];
 
     for (let i = 0; i <= `${platformResult.length - 1}`; i++) {
-        let getPlatforms = gamePlatform.push(platformResult[i].name);
+        gamePlatform.push(platformResult[i].name);
     }
 
     let platforms = '';
@@ -46,43 +46,33 @@ const renderGameInfo = function (gameInfoResult) {
             `;
 }
 
-//Renders stream information for the searched game, .map 
+//Renders stream information for the searched game
 const renderStreams = function (streamData) {
-    return `<div class="js-stream-data row">
-                <iframe 
-                    class="col-4 twitch-stream" 
-                    src="https://player.twitch.tv/?channel=${streamData.streams[0].channel.name}&autoplay=false"
-                    height="320"
-                    width="160"
-                    frameborder="0"
-                    scrolling="no"
-                    allowfullscreen="true">
-                </iframe>
-                <iframe 
-                    class="col-4 twitch-stream" 
-                    src="https://player.twitch.tv/?channel=${streamData.streams[1].channel.name}&autoplay=false"
-                    height="320"
-                    width="160"
-                    frameborder="0"
-                    scrolling="no"
-                    allowfullscreen="true">
-                </iframe>
-                <iframe 
-                    class="col-4 twitch-stream" 
-                    src="https://player.twitch.tv/?channel=${streamData.streams[2].channel.name}&autoplay=false"
-                    height="320"
-                    width="160"
-                    frameborder="0"
-                    scrolling="no"
-                    allowfullscreen="true">
-                </iframe>
-                <br>
-                <div class="col-12 reset-btn-container"><button type="submit" class="reset-btn">Search Again</button></div>
-            </div>`;
+    const streams = [];
+
+    for (let i = 0; i <= `${streamData.streams.length - 1}`; i++) {
+        streams.push(streamData.streams[i].channel.name);
+    }
+
+    let streamsRender = '';
+    streams.forEach(function (stream) {
+        streamsRender += `<div class="js-stream-data row">
+        <iframe 
+            class="col-4 twitch-stream" 
+            src="https://player.twitch.tv/?channel=${stream}&autoplay=false"
+            height="320"
+            width="160"
+            frameborder="0"
+            scrolling="no"
+            allowfullscreen="true">
+        </iframe>`
+    });
+    return streamsRender;
 }
 
-//Displays header for streams and the available streams
+//Displays header for streams, available streams, and the search again button
 const renderHeader = (title) => `<h3 class="col-12 live-stream-header">${title}</h3>`;
+const renderSearchAgain = `<div class="col-12 reset-btn-container"><button type="submit" class="reset-btn">Search Again</button></div>`;
 
 const displayStreamData = function (gameInfo) {
     return function (streamData) {
@@ -97,9 +87,11 @@ const displayStreamData = function (gameInfo) {
         ${renderGameInfo(gameInfo.results[0])}
         ${renderHeader(title)}
         ${streamsSection}
+        ${renderSearchAgain}
         `);
 
         console.log(gameInfo);
+        console.log(streamData);
     }
 }
 
