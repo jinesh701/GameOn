@@ -69,8 +69,9 @@ const renderStreams = function (streamData) {
     }
 
     let streamsRender = '';
+    let streamsFinalRender = ``
     streams.forEach(function (stream) {
-        streamsRender += `<div class="js-stream-data row">
+        streamsRender += `
         <iframe 
             class="col-4 twitch-stream" 
             src="https://player.twitch.tv/?channel=${stream}&autoplay=false"
@@ -80,8 +81,9 @@ const renderStreams = function (streamData) {
             scrolling="no"
             allowfullscreen="true">
         </iframe>`
+        streamsFinalRender = `<div class="js-stream-data row">${streamsRender}</div>`
     });
-    return streamsRender;
+    return streamsFinalRender; 
 }
 
 //Displays header for streams, available streams, and the search again button
