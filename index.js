@@ -33,13 +33,37 @@ const renderStreams = function (streamData) {
     return `<div class="js-stream-data row">
                 <h4 class="col-3 twitch-user">Channel Name: ${streamData.streams[0].channel.name}</h4>
                 <h4 class="col-3 twitch-viewers">Viewers: ${streamData.streams[0].viewers}</h4>
-                <a href="${streamData.streams[0].channel.url}" target="_blank"><img src="${streamData.streams[0].preview.medium}" class="twitch-stream col-4" alt="Image of Twitch stream"></a>
+                <iframe 
+                    class="col-4 twitch-stream" 
+                    src="https://player.twitch.tv/?channel=${streamData.streams[0].channel.name}&autoplay=false"
+                    height="320"
+                    width="160"
+                    frameborder="0"
+                    scrolling="no"
+                    allowfullscreen="true">
+                </iframe>
                 <h4 class="col-3 twitch-user">Channel Name: ${streamData.streams[1].channel.name}</h4>
                 <h4 class="col-3 twitch-viewers">Viewers: ${streamData.streams[1].viewers}</h4>
-                <a href="${streamData.streams[1].channel.url}" target="_blank"><img src="${streamData.streams[1].preview.medium}" class="twitch-stream col-4" alt="Image of Twitch stream"></a>
+                <iframe 
+                    class="col-4 twitch-stream" 
+                    src="https://player.twitch.tv/?channel=${streamData.streams[1].channel.name}&autoplay=false"
+                    height="320"
+                    width="160"
+                    frameborder="0"
+                    scrolling="no"
+                    allowfullscreen="true">
+                </iframe>
                 <h4 class="col-3 twitch-user">Channel Name: ${streamData.streams[2].channel.name}</h4>
                 <h4 class="col-3 twitch-viewers">Viewers: ${streamData.streams[2].viewers}</h4>
-                <a href="${streamData.streams[2].channel.url}" target="_blank"><img src="${streamData.streams[2].preview.medium}" class="twitch-stream col-4" alt="Image of Twitch stream"></a>
+                <iframe 
+                    class="col-4 twitch-stream" 
+                    src="https://player.twitch.tv/?channel=${streamData.streams[2].channel.name}&autoplay=false"
+                    height="320"
+                    width="160"
+                    frameborder="0"
+                    scrolling="no"
+                    allowfullscreen="true">
+                </iframe>
                 <br>
                 <div class="col-12 reset-btn-container"><button type="submit" class="reset-btn">Search Again</button></div>
             </div>`;
@@ -47,6 +71,7 @@ const renderStreams = function (streamData) {
 
 const renderHeader = (title) => `<h3 class="col-12 live-stream-header">${title}</h3>`;
 
+//Displays game info, header for streams, and the available streams
 const displayStreamData = function (gameInfo) {
     return function (streamData) {
         let title = 'There are no streams available :(';
@@ -62,7 +87,6 @@ const displayStreamData = function (gameInfo) {
         ${streamsSection}
         `);
 
-        console.log(gameInfo);
         console.log(streamData);
     }
 }
