@@ -21,6 +21,10 @@ img {
     margin-bottom: 20px; 
 }
 
+.game-description {
+    text-align: center; 
+}
+
 .game-details {
     display: block;
     text-align: center; 
