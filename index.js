@@ -13,7 +13,7 @@ const renderPlatformInfo = function (platformResult) {
     return platforms;
 }
 
-//Renders the release date of each game
+//Renders the release date and reformats it
 const renderDate = function (gameDate) {
     let date = '';
     let year = '';
@@ -25,10 +25,24 @@ const renderDate = function (gameDate) {
         let month = `${gameDate.slice(5,7)}`;
         let day = `${gameDate.slice(8,10)}`;
         date = `${month}/${day}/${year}`;
-    } else {
+    } 
+    else {
         date = 'No release date found';
     }
     return date;
+}
+
+//Renders the game description
+const renderGameDescription = function (gameDescription) {
+    let description = '';
+
+    if (gameDescription !== null) {
+        description = `${gameDescription}`;
+    }
+    else {
+        description = 'No description was provided for this game'; 
+    }
+    return description;
 }
 
 //Renders game information for the searched game
@@ -41,7 +55,7 @@ const renderGameInfo = function (gameInfoResult) {
                 <h3>Platforms:</h3>
                 ${renderPlatformInfo(gameInfoResult.platforms)}
                 </ul>
-                <p class="game-description col-6">${gameInfoResult.deck} <br> <br> <span class="game-details col-12"><b>For more details about the game: <a href="${gameInfoResult.site_detail_url}" target="_blank">Click Here</a></b></span></p>
+                <p class="game-description col-6">${renderGameDescription(gameInfoResult.deck)} <br> <br> <span class="game-details col-12"><b>For more details about the game: <a href="${gameInfoResult.site_detail_url}" target="_blank">Click Here</a></b></span></p>
             </div>
             `;
 }
