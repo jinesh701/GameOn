@@ -15,11 +15,19 @@ const renderPlatformInfo = function (platformResult) {
 
 //Renders game information for the searched game
 const renderGameInfo = function (gameInfoResult) {
+    let date = ``;
+    if (gameInfoResult.original_release_date !== null) {
+        date =  `${gameInfoResult.original_release_date.slice(0,10)}`; 
+    }
+    else {
+        date = `No release date found`; 
+    }
+
     return `<div class="js-game-data row">
                 <h2 class="game-name col-12">${gameInfoResult.name}</h2>
                 <img src="${gameInfoResult.image.medium_url}" class="game-image col-4" alt="Box art for ${gameInfoResult.name}">
                 <ul class="platforms col-6">
-                <h3 class="col-12">Original release date:</h3>${gameInfoResult.original_release_date}
+                <h3 class="col-12">Original release date:</h3>${date}
                 <h3>Platforms:</h3>
                 ${renderPlatformInfo(gameInfoResult.platforms)}
                 </ul>
@@ -87,7 +95,7 @@ const displayStreamData = function (gameInfo) {
         ${streamsSection}
         `);
 
-        console.log(streamData);
+        console.log(gameInfo);
     }
 }
 
