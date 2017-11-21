@@ -6,12 +6,12 @@ const renderPlatformInfo = function (platformResult) {
         let getPlatforms = gamePlatform.push(platformResult[i].name);
     }
 
+    let platforms = '';
     gamePlatform.forEach(function (platformItem) {
-        $('.platforms').append(`<li>${platformItem}</li>`)
+        platforms += `<li>${platformItem}</li>`;
     });
-
-    console.log(gamePlatform);
-};
+    return platforms;
+}
 
 //Renders game information for the searched game
 const renderGameInfo = function (gameInfoResult) {
