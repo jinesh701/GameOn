@@ -18,23 +18,21 @@ const renderDate = function (gameDate) {
     let date = '';
     let year = '';
     let month = '';
-    let day = ''; 
+    let day = '';
 
     if (gameDate !== null) {
         let year = `${gameDate.slice(0,4)}`;
         let month = `${gameDate.slice(5,7)}`;
         let day = `${gameDate.slice(8,10)}`;
-        date = `${month}/${day}/${year}`; 
-    }
-    else {
-        date = 'No release date found'; 
+        date = `${month}/${day}/${year}`;
+    } else {
+        date = 'No release date found';
     }
     return date;
 }
 
 //Renders game information for the searched game
 const renderGameInfo = function (gameInfoResult) {
-    
     return `<div class="js-game-data row">
                 <h2 class="game-name col-12">${gameInfoResult.name}</h2>
                 <img src="${gameInfoResult.image.medium_url}" class="game-image col-4" alt="Box art for ${gameInfoResult.name}">
@@ -51,8 +49,6 @@ const renderGameInfo = function (gameInfoResult) {
 //Renders stream information for the searched game, .map 
 const renderStreams = function (streamData) {
     return `<div class="js-stream-data row">
-                <h4 class="col-3 twitch-user">Channel Name: ${streamData.streams[0].channel.name}</h4>
-                <h4 class="col-3 twitch-viewers">Viewers: ${streamData.streams[0].viewers}</h4>
                 <iframe 
                     class="col-4 twitch-stream" 
                     src="https://player.twitch.tv/?channel=${streamData.streams[0].channel.name}&autoplay=false"
@@ -62,8 +58,6 @@ const renderStreams = function (streamData) {
                     scrolling="no"
                     allowfullscreen="true">
                 </iframe>
-                <h4 class="col-3 twitch-user">Channel Name: ${streamData.streams[1].channel.name}</h4>
-                <h4 class="col-3 twitch-viewers">Viewers: ${streamData.streams[1].viewers}</h4>
                 <iframe 
                     class="col-4 twitch-stream" 
                     src="https://player.twitch.tv/?channel=${streamData.streams[1].channel.name}&autoplay=false"
@@ -73,8 +67,6 @@ const renderStreams = function (streamData) {
                     scrolling="no"
                     allowfullscreen="true">
                 </iframe>
-                <h4 class="col-3 twitch-user">Channel Name: ${streamData.streams[2].channel.name}</h4>
-                <h4 class="col-3 twitch-viewers">Viewers: ${streamData.streams[2].viewers}</h4>
                 <iframe 
                     class="col-4 twitch-stream" 
                     src="https://player.twitch.tv/?channel=${streamData.streams[2].channel.name}&autoplay=false"
@@ -89,9 +81,9 @@ const renderStreams = function (streamData) {
             </div>`;
 }
 
+//Displays header for streams and the available streams
 const renderHeader = (title) => `<h3 class="col-12 live-stream-header">${title}</h3>`;
 
-//Displays header for streams and the available streams
 const displayStreamData = function (gameInfo) {
     return function (streamData) {
         let title = 'There are no streams available :(';
