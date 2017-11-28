@@ -40,6 +40,11 @@ button:focus {
   border: 2px solid rgb(10, 92, 245);
 }
 
+.js-search-results {
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
 .extra-results {
   padding-top: 5px;
   padding-bottom: 5px;

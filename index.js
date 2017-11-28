@@ -114,12 +114,16 @@ const displayStreamData = function(gameInfo) {
       streamsSection = renderStreams(streamData);
     }
 
-    $(".js-search-results").html(`
+    $(".js-search-results")
+      .html(
+        `
         ${renderGameInfo(gameInfo)}
         ${renderHeader(title)}
         ${streamsSection}
         ${renderSearchAgain}
-        `);
+        `
+      )
+      .css("opacity", "1");
   };
 };
 
