@@ -10,9 +10,15 @@ Twitch streams for the game.
 
 https://jinesh701.github.io/GameOn/
 
-## Technology used
+## Technology used:
 
--HTML -CSS -JavaScript -jQuery -Giant Bomb API -Twitch API
+* HTML
+* CSS
+* JavaScript
+* jQuery
+* Giant Bomb API
+* Twitch API
+* This app is responsive for desktop, mobile, and tablet
 
 ![gameonscreen1](https://user-images.githubusercontent.com/25669046/33316123-d2d45ca2-d400-11e7-8500-3819522d1e21.PNG)
 ![gameonscreen2](https://user-images.githubusercontent.com/25669046/33316133-d759749c-d400-11e7-9539-71cb59521ff8.PNG)
