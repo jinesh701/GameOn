@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 /* Grid measurements:
    *
    *   960px wide including 12 gutters (half gutters on both edges)
@@ -23,13 +22,12 @@
   margin: 0 auto;
 }
 
-
 /* Clearfix */
 
 .row::before,
 .row::after {
   display: table;
-  content: '';
+  content: "";
 }
 
 .row::after {
@@ -51,7 +49,6 @@
   padding-right: 1.04166666%;
 }
 
-
 /* Mobile defaults */
 
 .col-3,
@@ -60,7 +57,6 @@
 .col-12 {
   width: 100%;
 }
-
 
 /* Non-mobile, grid */
 
@@ -83,9 +79,77 @@
   }
 }
 
-/*Adjust logo size for iPhone 5*/ 
-@media only screen and (max-width: 320px) {
+/*Adjust logo size, user-input form, and reset btn for mobile devices*/
+@media only screen and (max-width: 736px) {
+  body {
+    margin: 0 auto;
+  }
+
+  header {
+    background-color: #3d5a80;
+  }
+
+  .js-search-results {
+    background-color: #eeeeee;
+  }
+
+  .js-extra-results {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
   .logo {
     font-size: 4rem;
+    color: white;
+  }
+
+  .search-form {
+    margin: 0px;
+  }
+
+  .js-user-input {
+    width: 180px;
+  }
+
+  .reset-btn {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    margin: 0 auto;
+    background: url(img/header.jpg) center center fixed no-repeat;
+    background-size: cover;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .js-extra-results {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: -10px;
+  }
+
+  .js-search-results {
+    background-color: #ffffff59;
+  }
+
+  .reset-btn {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .logo {
+    font-size: 3rem;
+  }
+
+  .game-name {
+    font-size: 2rem;
   }
 }
