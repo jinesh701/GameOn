@@ -40,12 +40,6 @@ button:focus {
   border: 2px solid rgb(10, 92, 245);
 }
 
-.js-extra-results {
-  text-align: center;
-  padding-top: 30px;
-  margin-bottom: -10px;
-}
-
 .extra-results {
   padding-top: 5px;
   padding-bottom: 5px;
