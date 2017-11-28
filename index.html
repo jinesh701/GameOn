@@ -18,14 +18,14 @@
             </div>
             <div class="col-6 search-form">
                 <form action="#" class="js-search-form">
-                    <input type="text" class="js-user-input" placeholder="Search for a game" required>
+                    <input type="text" class="js-user-input" placeholder="Search for a game" aria-label="Search-game-input" required>
                     <button type="submit" class="js-search-btn">Search</button>
                 </form>
             </div>
         </div>
     </header>
 
-    <main role="main">
+    <main role="main" aria-live="assertive">
         <div class="js-search-results"></div>
     </main>
 
