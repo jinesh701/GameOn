@@ -1,59 +1,110 @@
-.logo { 
-    text-align: center;
-    font-size: 5rem; 
+body {
+  font-family: "Merriweather", serif;
+}
+
+.logo {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-form {
+  margin-top: 30px;
 }
 
 .js-search-form {
-    text-align: center;
+  text-align: center;
+}
+
+.js-user-input {
+  width: 275px;
+}
+
+.js-search-btn {
+  width: 100px;
+  height: 20px;
+  background: #4993e2;
+  color: white;
+  border: 1px;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.js-search-btn:hover {
+  background-color: #0077ff;
+}
+
+input:focus,
+button:focus {
+  border: 2px solid rgb(10, 92, 245);
+}
+
+.js-extra-results {
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: -10px;
+}
+
+.extra-results {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.first-extra-result {
+  padding-top: 10px;
 }
 
 .game-name {
-    text-align: center;
-    font-size: 3rem; 
+  text-align: center;
+  font-size: 3rem;
 }
 
 .platforms {
-    text-align: center; 
-    list-style: none; 
+  text-align: center;
+  list-style: none;
 }
 
 img {
-    margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .game-description {
-    text-align: center; 
+  text-align: center;
 }
 
 .game-details {
-    display: block;
-    text-align: center; 
+  display: block;
+  text-align: center;
 }
 
 .live-stream-header {
-    text-align: center; 
+  text-align: center;
 }
 
 .twitch-user {
-    text-align: center; 
-    font-size: 1.2rem,
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .twitch-viewers {
-    text-align: center;
-    font-size: 1.2rem, 
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .twitch-stream {
-    padding-bottom: 20px; 
+  padding-bottom: 20px;
 }
 
 .js-reset-btn {
-    text-align: center; 
+  text-align: center;
 }
 
 .reset-btn {
-    font-size: 16px;
-    padding-left: 100px; 
-    padding-right: 100px; 
+  font-size: 16px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #007eff;
+  color: white;
+  border: 1px;
 }
