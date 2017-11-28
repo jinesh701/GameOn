@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>GameOn</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="float-grid.css">
-    </head>
-    <body>
-        <header role="banner">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="logo">GameOn</h1>
-                </div>
-            </div>
-        </header>
-        
-        <main role="main">
-        <form action="#" class="js-search-form">
-            <input type="text" class="js-user-input" placeholder="Search for a game" required>
-            <button type="submit" class="js-search-btn">Search</button>
-        </form>
 
+<head>
+    <title>GameOn</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="float-grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
+</head>
+
+<body>
+    <header role="banner">
+        <div class="row">
+            <div class="col-3">
+                <h1 class="logo">GameOn</h1>
+            </div>
+            <div class="col-6 search-form">
+                <form action="#" class="js-search-form">
+                    <input type="text" class="js-user-input" placeholder="Search for a game" required>
+                    <button type="submit" class="js-search-btn">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
         <div class="js-search-results"></div>
-        </main>
-        
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="index.js"></script>
-        <script src="api.js"></script>
-    </body>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="index.js"></script>
+    <script src="api.js"></script>
+</body>
+
 </html>
