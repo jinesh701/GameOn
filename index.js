@@ -45,6 +45,13 @@ const renderGameDescription = function(gameDescription) {
 //Renders game information for the searched game
 const renderGameInfo = function(gameInfoResult) {
   return `<div class="js-game-data row">
+            <p class="js-extra-results col-12">Did you mean:
+                <a href="#" class="extra-results first-extra-result col-12" data-index="1">Test 1</a>
+                <a href="#" class="extra-results col-12" data-index="2">Test 2</a>
+                <a href="#" class="extra-results col-12" data-index="3">Test 3</a>
+                <a href="#" class="extra-results col-12" data-index="4">Test 4</a>
+            </p>
+            <hr>
                 <h2 class="game-name col-12">${gameInfoResult.name}</h2>
                 <img src="${
                   gameInfoResult.image.medium_url
@@ -63,7 +70,7 @@ const renderGameInfo = function(gameInfoResult) {
                 )} <br> <br> <span class="game-details col-12"><b>For more details about the game: <a href="${
     gameInfoResult.site_detail_url
   }" target="_blank">Click Here</a></b></span></p>
-            </div>
+          </div>
             `;
 };
 
@@ -95,7 +102,7 @@ const renderStreams = function(streamData) {
 
 //Displays header for streams, available streams, and the search again button
 const renderHeader = title =>
-  `<h3 class="col-12 live-stream-header">${title}</h3>`;
+  `<hr><h3 class="col-12 live-stream-header">${title}</h3>`;
 const renderSearchAgain = `<div class="row"><div class="col-12 js-reset-btn"><input type="reset" value="Search Again" class="reset-btn"></div></div>`;
 
 const displayStreamData = function(gameInfo) {
@@ -116,16 +123,25 @@ const displayStreamData = function(gameInfo) {
   };
 };
 
-const displayGameInfo = function(gameIndex) {
-  return function(gameData) {
-    getGameStreams(
-      gameData.results[gameIndex].name,
-      displayStreamData(gameData.results[gameIndex])
-    );
-  };
+const displayGameInfo = function(gameIndex, gameData) {
+  getGameStreams(
+    gameData.results[gameIndex].name,
+    displayStreamData(gameData.results[gameIndex])
+  );
 };
 
 //Submit user input for game/stream search
+let gameStored = {};
+
+function storeGame(gameInfo) {
+  window.gameStored = gameInfo;
+  return window.gameStored;
+}
+
+function retrieveGame() {
+  return window.gameStored;
+}
+
 function handleSubmit() {
   $(".js-search-form").submit(event => {
     event.preventDefault();
@@ -133,19 +149,27 @@ function handleSubmit() {
     const query = $(queryTarget).val();
     queryTarget.val("");
     console.log(query);
-    getGameInfo(query, displayGameInfo(0));
-    $(".js-search-form").hide();
+    getGameInfo(query, gameInfo => displayGameInfo(0, storeGame(gameInfo)));
   });
 }
 
-//Resets page info and restores original search bar
-function resetSearch() {
+//Displays additional results for users game search
+function handleExtraResults() {
+  $("body").on("click", ".extra-results", function(event) {
+    let resultIndex = $(event.currentTarget).attr("data-index");
+    displayGameInfo(resultIndex, retrieveGame());
+  });
+}
+
+//Scrolls to top of page on click
+function handleResetSearch() {
   $("body").on("click", ".reset-btn", function() {
-    $(".js-search-results").empty();
-    $(".reset-btn").hide();
-    $(".js-search-form").show();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
   });
 }
 
-handleSubmit();
-resetSearch();
+$(document).ready(function() {
+  handleSubmit();
+  handleExtraResults();
+  handleResetSearch();
+});
