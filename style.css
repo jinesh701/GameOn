@@ -44,9 +44,25 @@ button:focus {
   border: 2px solid rgb(10, 92, 245);
 }
 
+a:link {
+  color: blue;
+}
+
+a:visted {
+  color: pink;
+}
+
 .js-search-results {
   transition: opacity 1s ease-in-out;
   opacity: 0;
+}
+
+.site-description {
+  text-align: center;
+}
+
+.search-game-text {
+  text-align: center;
 }
 
 .error-message {
