@@ -79,7 +79,38 @@
   }
 }
 
-/*Adjust logo size, user-input form, and reset btn for mobile devices*/
+/*Desktop specific styles*/
+@media only screen and (min-width: 768px) {
+  body {
+    margin: 0 auto;
+    background: url(img/header.jpg) center center fixed no-repeat;
+    background-size: cover;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .logo-url {
+    color: black;
+  }
+
+  .js-extra-results {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: -10px;
+  }
+
+  .js-search-results {
+    background-color: rgba(255, 255, 255, 0.59);
+  }
+
+  .reset-btn {
+    margin-bottom: 30px;
+  }
+}
+
+/*Adjusted styles for mobile devices*/
 @media only screen and (max-width: 736px) {
   body {
     margin: 0 auto;
@@ -115,6 +146,10 @@
     margin: 0px;
   }
 
+  .game-name {
+    font-size: 35px;
+  }
+
   .js-user-input {
     width: 180px;
   }
@@ -122,36 +157,6 @@
   .reset-btn {
     padding-left: 80px;
     padding-right: 80px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  body {
-    margin: 0 auto;
-    background: url(img/header.jpg) center center fixed no-repeat;
-    background-size: cover;
-  }
-
-  hr {
-    display: none;
-  }
-
-  .logo-url {
-    color: black;
-  }
-
-  .js-extra-results {
-    text-align: center;
-    padding-top: 30px;
-    margin-bottom: -10px;
-  }
-
-  .js-search-results {
-    background-color: rgba(255, 255, 255, 0.59);
-  }
-
-  .reset-btn {
-    margin-bottom: 30px;
   }
 }
 
