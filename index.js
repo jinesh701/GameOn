@@ -168,6 +168,7 @@ function displayGameInfo(gameIndex, gameData) {
 function handleSubmit() {
   $('.js-search-form').submit((event) => {
     event.preventDefault();
+    $('.landing-info').hide();
     const queryTarget = $(event.currentTarget).find('.js-user-input');
     const query = $(queryTarget).val();
     queryTarget.val('');
