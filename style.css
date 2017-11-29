@@ -8,6 +8,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.logo-url {
+  text-decoration: none;
+}
+
 .search-form {
   margin-top: 30px;
 }

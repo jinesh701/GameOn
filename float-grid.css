@@ -101,7 +101,14 @@
 
   .logo {
     font-size: 4rem;
+  }
+
+  .logo-url {
     color: white;
+  }
+
+  [href="https://jinesh701.github.io/GameOn/"] {
+    pointer-events: none;
   }
 
   .search-form {
@@ -127,6 +134,10 @@
 
   hr {
     display: none;
+  }
+
+  .logo-url {
+    color: black;
   }
 
   .js-extra-results {
