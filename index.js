@@ -44,12 +44,18 @@ const renderGameDescription = function(gameDescription) {
 
 //Renders extra results for the user
 const renderExtraResults = function() {
-  let extraResultOne = retrieveGame().results[1].name;
-  let extraResultTwo = retrieveGame().results[2].name;
-  let extraResultThree = retrieveGame().results[3].name;
-  let extraResultFour = retrieveGame().results[4].name;
-  let extraResultFive = retrieveGame().results[5].name;
-  let extraResult = `<p class="js-extra-results col-12">Did you mean:
+  let extraResult = "";
+
+  if (retrieveGame().results.length === 1) {
+    let extraResult = `<p class="js-extra-results col-12"></p>`;
+    return extraResult;
+  } else {
+    let extraResultOne = retrieveGame().results[1].name;
+    let extraResultTwo = retrieveGame().results[2].name;
+    let extraResultThree = retrieveGame().results[3].name;
+    let extraResultFour = retrieveGame().results[4].name;
+    let extraResultFive = retrieveGame().results[5].name;
+    let extraResult = `<p class="js-extra-results col-12">Did you mean:
     <a href="#" class="extra-results first-extra-result col-12" data-index="1">${
       extraResultOne
     }</a>
@@ -66,7 +72,8 @@ const renderExtraResults = function() {
       extraResultFive
     }</a>
 </p>`;
-  return extraResult;
+    return extraResult;
+  }
 };
 
 //Renders game information for the searched game
