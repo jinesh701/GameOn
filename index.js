@@ -44,42 +44,32 @@ const renderGameDescription = function(gameDescription) {
 
 //Renders extra results for the user
 const renderExtraResults = function() {
-  let extraResult = "";
-
-  if (retrieveGame().results.length === 1) {
-    let extraResult = `<p class="js-extra-results col-12"></p>`;
-    return extraResult;
-  } else {
-    let extraResultOne = retrieveGame().results[1].name;
-    let extraResultTwo = retrieveGame().results[2].name;
-    let extraResultThree = retrieveGame().results[3].name;
-    let extraResultFour = retrieveGame().results[4].name;
-    let extraResultFive = retrieveGame().results[5].name;
-    let extraResult = `<p class="js-extra-results col-12">Did you mean:
-    <a href="#" class="extra-results first-extra-result col-12" data-index="1">${
-      extraResultOne
-    }</a>
-    <a href="#" class="extra-results col-12" data-index="2">${
-      extraResultTwo
-    }</a>
-    <a href="#" class="extra-results col-12" data-index="3">${
-      extraResultThree
-    }</a>
-    <a href="#" class="extra-results col-12" data-index="4">${
-      extraResultFour
-    }</a>
-    <a href="#" class="extra-results col-12" data-index="5">${
-      extraResultFive
-    }</a>
-</p>`;
-    return extraResult;
+  function getName(extraGameName) {
+    return extraGameName.name;
   }
+
+  function wrapHref(extraGameResult, index) {
+    return `<a href="#" class="extra-results col-12" data-index="${index}">${
+      extraGameResult
+    }</a>`;
+  }
+
+  const gameName = retrieveGame().results.map(function(extraGameResult, index) {
+    return wrapHref(getName(extraGameResult), index);
+  });
+
+  gameName.splice(0, 1);
+
+  console.log(gameName);
+  return gameName.join("");
 };
 
 //Renders game information for the searched game
 const renderGameInfo = function(gameInfoResult) {
   return `<div class="js-game-data row">
-           ${renderExtraResults()}
+            <p class="js-extra-results col-12">Did you mean:
+                ${renderExtraResults()}
+            </p>
             <hr>
                 <h2 class="game-name col-12">${gameInfoResult.name}</h2>
                 <img src="${
