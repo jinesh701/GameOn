@@ -105,6 +105,11 @@
     background-color: rgba(255, 255, 255, 0.59);
   }
 
+  .error-message {
+    background-color: rgba(255, 255, 255, 0.59);
+    font-size: 2rem;
+  }
+
   .reset-btn {
     margin-bottom: 30px;
   }

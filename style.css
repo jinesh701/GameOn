@@ -49,6 +49,11 @@ button:focus {
   opacity: 0;
 }
 
+.error-message {
+  display: none;
+  text-align: center;
+}
+
 .extra-results {
   padding-top: 5px;
   padding-bottom: 5px;
