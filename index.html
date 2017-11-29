@@ -2,44 +2,55 @@
 <html lang="en">
 
 <head>
-    <title>GameOn</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Do you like video games and twitch? GameOn will provide you with video game information and twitch streams all in one place!">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image=/x-icon">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="float-grid.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
+  <title>GameOn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Do you like video games and twitch? GameOn will provide you with video game information and twitch streams all in one place!">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image=/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="float-grid.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
 </head>
 
 <body>
-    <header role="banner">
-        <div class="row">
-            <div class="col-3">
-                <h1 class="logo">
-                    <a href="https://jinesh701.github.io/GameOn/" class="logo-url">GameOn</a>
-                </h1>
-            </div>
-            <div class="col-6 search-form">
-                <form action="#" class="js-search-form">
-                    <input type="text" class="js-user-input" placeholder="Search for a game" aria-label="Search-game-input" required>
-                    <button type="submit" class="js-search-btn">Search</button>
-                </form>
-            </div>
-        </div>
-    </header>
+  <header role="banner">
+    <div class="row">
+      <div class="col-3">
+        <h1 class="logo">
+          <a href="https://jinesh701.github.io/GameOn/" class="logo-url">GameOn</a>
+        </h1>
+      </div>
+      <div class="col-6 search-form">
+        <form action="#" class="js-search-form">
+          <input type="text" class="js-user-input" placeholder="Search for a game" aria-label="Search-game-input" required>
+          <button type="submit" class="js-search-btn">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
 
-    <main role="main" aria-live="polite">
-        <div class="row">
-            <p class="col-12 error-message">I don't think that's a real game! Please try again or be more specific.</p>
-        </div>
-        <div class="js-search-results"></div>
-    </main>
+  <div class="row landing-info">
+    <div class="col-12">
+      <h2 class="site-description">GameOn is an app that provides users with information about a game and the top 3 current live Twitch streams.</h2>
+    </div>
+  </div>
+  <div class="row landing-info">
+    <div class="col-6 search-game-text-container">
+      <h2 class="search-game-text">Search a game to get started! (e.g. Overwatch, PlayerUnknown's Battlegrounds, Fortnite, League of Legends)</h2>
+    </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="index.js"></script>
-    <script src="api.js"></script>
+  <main role="main" aria-live="polite">
+    <div class="row">
+      <p class="col-12 error-message">I don't think that's a real game! Please try again or be more specific.</p>
+    </div>
+    <div class="js-search-results"></div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="index.js"></script>
+  <script src="api.js"></script>
 </body>
 
 </html>
