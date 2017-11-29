@@ -60,7 +60,6 @@ const renderExtraResults = function() {
 
   gameName.splice(0, 1);
 
-  console.log(gameName);
   return gameName.join("");
 };
 
@@ -147,10 +146,18 @@ const displayStreamData = function(gameInfo) {
 };
 
 const displayGameInfo = function(gameIndex, gameData) {
-  getGameStreams(
-    gameData.results[gameIndex].name,
-    displayStreamData(gameData.results[gameIndex])
-  );
+  let noGame = retrieveGame().number_of_total_results;
+  if (noGame === 0) {
+    $(".error-message").fadeIn();
+    $(".js-search-results").hide();
+  } else {
+    $(".error-message").fadeOut();
+    $(".js-search-results").show();
+    getGameStreams(
+      gameData.results[gameIndex].name,
+      displayStreamData(gameData.results[gameIndex])
+    );
+  }
 };
 
 //Submit user input for game/stream search
