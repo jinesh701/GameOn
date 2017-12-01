@@ -10,6 +10,7 @@ body {
 
 .logo-url {
   text-decoration: none;
+  color: black !important;
 }
 
 .search-form {
@@ -49,6 +50,10 @@ a:link {
 }
 
 a:hover {
+  color: #f0bcbd;
+}
+
+a:visited {
   color: #f0a45d;
 }
 
