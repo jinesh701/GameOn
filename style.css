@@ -10,7 +10,6 @@ body {
 
 .logo-url {
   text-decoration: none;
-  color: black !important;
 }
 
 .search-form {
@@ -43,18 +42,6 @@ body {
 input:focus,
 button:focus {
   border: 2px solid rgb(10, 92, 245);
-}
-
-a:link {
-  color: #28508d;
-}
-
-a:hover {
-  color: #f0bcbd;
-}
-
-a:visited {
-  color: #f0a45d;
 }
 
 .js-search-results {

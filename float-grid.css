@@ -92,7 +92,19 @@
   }
 
   .logo-url {
-    color: black;
+    color: black !important;
+  }
+
+  a:link {
+    color: #28508d;
+  }
+
+  a:hover {
+    color: #f0bcbd;
+  }
+
+  a:visited {
+    color: #f0a45d;
   }
 
   .search-game-text {
@@ -152,7 +164,7 @@
   }
 
   .logo-url {
-    color: white;
+    color: white !important;
   }
 
   [href="https://jinesh701.github.io/GameOn/"] {
