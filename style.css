@@ -45,11 +45,11 @@ button:focus {
 }
 
 a:link {
-  color: blue;
+  color: #28508d;
 }
 
-a:visted {
-  color: pink;
+a:hover {
+  color: #f0a45d;
 }
 
 .js-search-results {
